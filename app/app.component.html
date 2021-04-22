@@ -1,0 +1,5 @@
+<div style="text-align:center">
+  <h2>Select Plan</h2>
+  <app-subscriber (emailEmitter)="sendEmail($event)" (planEmitter)="sendPlan($event)" (dateEmitter)="sendDate($event)"></app-subscriber>
+  <app-plan-table [emailEmitter]="email" [planEmitter]="plan" [dateEmitter]="date"></app-plan-table>
+</div>

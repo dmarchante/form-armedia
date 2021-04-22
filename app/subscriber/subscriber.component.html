@@ -1,0 +1,35 @@
+<div class="form-container">
+  <form [formGroup]="planSelectionForm" (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+      <input [ngClass]="{'error': f.email.touched && f.email.invalid}" type="email" placeHolder="E-mail" class="form-control" formControlName="email" class="form-field">
+      <small *ngIf="f.email.touched && f.email.invalid" style="color: red">Please input the correct email format.</small> <br>
+      
+      <input [ngClass]="{'error': f.password.touched && f.password.invalid}" type="password" placeholder="Enter password " formControlName="password" class="form-field">
+      <small *ngIf="f.password.touched && f.password.invalid" style="color: red">Please input the correct password format.</small> <br>
+      <small>Note: At least 8 characters with one special character.</small> <br>
+      <br>  
+    
+      <input  [ngClass]="{'error': f.passwordVerification.touched && f.passwordVerification.invalid}" type="password" placeholder="Re-type password" formControlName="passwordVerification">
+      <small *ngIf="f.passwordVerification.touched && f.passwordVerification.invalid" style="color: red">Please input a matching  password.</small>
+      <small></small> <br>
+      <br>
+  
+      <select formControlName="planName">
+        <option *ngFor="let plan of Plan" [ngValue]="plan">{{ plan }}</option>
+      </select> <br>
+    </div>
+    <div class="button-container">
+      <button type="submit" [disabled]="!planSelectionForm.valid">Submit</button>
+      <button class="button-clear" type="submit" >Clear</button>
+    </div>
+    <div>
+      <p>
+        Data: {{ planSelectionForm.value | json }}
+      </p>
+  
+      <p>
+        Status: {{ planSelectionForm.status }}
+      </p>
+    </div>
+  </form>
+</div>
