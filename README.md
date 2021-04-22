@@ -1,3 +1,6 @@
+# Description
+A form with validation, that generates a table with submitted information. In this application the form is delivered and the table is in production.
+
 # FormArmedia
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
